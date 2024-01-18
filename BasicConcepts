@@ -1,0 +1,39 @@
+Solidity:
+---------
+
+1. Object oriented programming language for smartcontracts 
+2. Curly-bracket language
+3. Designed for Ethereum virtual machine(EVM)
+4. Statically typed (variable must be specified)
+5. supports inheritance, libraries, and complex user-defined types
+
+**SmartContracts are programs that govern behaviour of accounts within Ethereum state
+
+Comments:
+---------
+// This is a single-line comment.
+
+/*
+This is a
+multi-line comment.
+*/
+
+
+Datatypes
+---------
+1. int = both positive and negative numbers => default value 0
+2. uint = positive => default value =0
+3. address = ethereum address => default value = 0x0000000000000000000000000000000000000000
+4. string = can use both "" '' 
+5. bytes = alternative to string. less gas price => default value =0x
+6. boolean =true or false => default value false.
+
+Functions:
+---------
+
+    Functions are the executable units of code. Functions are usually defined inside a contract, but they can also be defined outside of contracts.
+
+syntax:
+    function functionName(argument) visibility state mutability returns (datatype){
+    }
+
