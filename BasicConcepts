@@ -17,7 +17,8 @@ Comments:
 This is a
 multi-line comment.
 */
-
+pragma
+------
 
 Datatypes
 ---------
@@ -28,12 +29,64 @@ Datatypes
 5. bytes = alternative to string. less gas price => default value =0x
 6. boolean =true or false => default value false.
 
+Types of variable:
+-----------------
+State variable
+Local variable
+Global variable
+
+Contract syntax
+---------------
+contract contractname{
+//logic
+}
+
 Functions:
 ---------
-
     Functions are the executable units of code. Functions are usually defined inside a contract, but they can also be defined outside of contracts.
 
 syntax:
-    function functionName(argument) visibility state mutability returns (datatype){
+    function functionName(argument) visibility state-mutability returns (datatype){
     }
+
+Types of State-Mutability:
+--------------------------
+pure -> doesn't read or write data on ethereum 
+view -> read data from ethereum
+
+types of memory location:
+-------------------------
+memory-> string datatype
+calldata
+storage
+stack
+
+payable: used to send Eth between address
+
+Eth : native crytocurrency of Ethereum blockchain network
+
+wei: denomination of Eth (18 digits) -gas price calculated in wei, if you send Eth in smart contract
+
+Gwei: Gas fee calculated in Gwei by Ethereum.
+
+Array
+-----
+    Holds many data with same data type
+    
+    types: Fixed size(static), dynamic type
+    
+    datatype[] visibility arrayName = [values]
+    
+    static:  uint[3] public arr1 =[1,2,3]
+    dynamic: uint[] public arr2 =[2,3,4,5,6]
+
+Adding values to Array
+----------------------
+    array.push(value);
+
+Removing values from array:
+--------------------------
+    array.pop()-> remove index value
+
+
 
