@@ -89,4 +89,9 @@ Removing values from array:
     array.pop()-> remove index value
 
 
+function visibility:
+--------------------
+external -> tells Solidity that this function can only be called from outside this contract.
+
+
 
