@@ -31,9 +31,9 @@ Datatypes
 
 Types of variable:
 -----------------
-State variable
-Local variable
-Global variable
+State variable-> permanently stored on blockchain
+Local variable -> not storing on blockchain
+Global variable ->available for all functions
 
 Contract syntax
 ---------------
@@ -56,9 +56,9 @@ view -> read data from ethereum
 
 types of memory location:
 -------------------------
-memory-> string datatype
+memory-> variables are temporary, and are erased between external function calls to your contract
 calldata
-storage
+storage -> refers to variables stored permanently on the blockchain.
 stack
 
 payable: used to send Eth between address
