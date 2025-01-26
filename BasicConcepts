@@ -19,7 +19,7 @@ multi-line comment.
 */
 pragma
 ------
-
+it specifies the compiler version of the solidity
 Datatypes
 ---------
 1. int = both positive and negative numbers => default value 0
