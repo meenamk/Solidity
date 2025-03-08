@@ -1,0 +1,55 @@
+There are four types of storage available in the EVM.
+1.Storage
+2.Transient Storage
+3.Memory
+4.The stack
+
+Storage (Permanent Storage):
+---------------------------
+	1. It's the main location where data is stored permanently.
+	2. After the transaction ends, the data is exist here.
+	3. Getting data from here is slow and expensive
+	4. So, it would be better, if you store very important data.
+
+✔ Persistent: Data stays even after the transaction ends.
+✔ Expensive: Reading/writing data here costs a lot of gas.
+✔ Key-Value Store: It stores data as key-value pairs (each 256-bit key maps to a 256-bit value).
+✔ Best Use Case: Store only essential contract data (like account balances).
+	
+Transient Storage (Temporary Storage for a Transaction):
+-------------------------------------------------------
+
+	1. Unlike storage, data can be stored here temporarily while doing transactions.
+	2. Once the transaction completes, the stored data will be erased. 
+	3. So its cheaper.
+
+✔ Temporary: Data only lasts during the transaction and is erased afterward.
+✔ Cheaper than Storage: Since it disappears after the transaction, it’s less costly.
+✔ Best Use Case: Store data only needed within a single transaction but across multiple function calls in that transaction.
+
+Memory (Temporary Storage for a Function Call):
+----------------------------------------------
+	1. When transactions start, a new space is allocated to stored the data for doing the transactions.
+	2. Based the space needed for the transaction,  the more gas price it gets.
+	3. Once the transaction is done, the allocated space will be cleaned
+	4. So nothing stores permanently.
+
+✔ Fresh Instance for Each Call: Each function gets a new memory space during execution.
+✔ Not Persistent: Once the function call ends, memory is wiped clean.
+✔ Cost Increases with Size: Larger memory use costs more gas (it grows quadratically).
+✔ Best Use Case: Store temporary data needed within a function execution (e.g., calculations).
+	
+The Stack (Limited Working Space for the EVM):
+----------------------------------------------
+	1. When doing the transactions 1024 data can only be stored. 
+	2. If any data is needed which is in deep in the stack for the transaction, the top-most data will be moved to temporary location and the needed data will be moved to top location. Then moved top-most data
+will be moved again to the stack from temporary location.(Swap machanism). 
+	3. The above swap machanism is done as it has very limited space.
+
+✔ Stores Up to 1024 Items: Only 1024 values (each 256-bit) can be stored here.
+✔ LIFO (Last In, First Out): Just like a stack of plates, you can only access the topmost values directly.
+✔ Retrieving Deep Values: If a value is deep in the stack:
+        1. If it’s within the top 16 elements, the EVM can copy (DUP) or swap (SWAP) it to the top.
+        2. If it’s deeper, the contract must store it in memory or storage before retrieving it later.
+✔ Best Use Case: The EVM performs calculations here before storing results in memory/storage.
+	
